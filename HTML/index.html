@@ -53,15 +53,29 @@
       .main-content {
         background-color: #ededed;
       }
+
       /*main-content - ordination-container*/
+      .ordination-container{
+        display: flex;
+        justify-content: flex-end;
+        padding: 32px;
+      }
+
+      .ordination-container__label, 
+      .ordination-container__select-input{
+        font-size: 14px;
+      }
+
       .ordination-container__select-input {
         background-color: transparent;
         border: none;
         font-weight: bold;
       }
+
       .product-card {
         background-color: #fff;
       }
+
       /*footer*/
       .footer {
         background-color: #fff;
@@ -84,7 +98,6 @@
           placeholder="Buscar por produtos"
           class="header_text-input"
         />
-        <button>Buscar</button>
       </div>
       <button class="header_cart">
         <img alt="" src="./assets/cart-icon.svg" alt="Carrinho de compras" />
@@ -96,7 +109,7 @@
     <main class="main-content">
       <!-- Ordenar -->
       <section class="ordination-container">
-        <span>Ordenar por</span>
+        <span class="ordination-container__label">Ordenar por</span>
         <select class="ordination-container_select-input">
           <option value="price-desc">Menor Preço</option>
           <option value="price-asc">Maior Preço</option>
