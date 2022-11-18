@@ -13,6 +13,17 @@
       /*header*/
       .header {
         background-color: #0f1726;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 32px;
+      }
+
+      .header_cart{
+        background-color: transparent;
+        border: none;
       }
 
       .header__text-input::placeholder {
@@ -43,7 +54,7 @@
   <body>
     <!-- Cabeçalho_Header -->
     <header class="header">
-      <img src="./assets/ituring-ecommerce-logo.svg" alt="Ituring" />
+      <img src="./assets/ituring-ecommerce-logo.svg" alt="Logo da aplicação de E-Commerce" />
       <!-- Busca -->
       <div>
         <input
@@ -56,7 +67,7 @@
         <button>Buscar</button>
       </div>
       <button class="header_cart">
-        <img alt="" src="https://ituring.com.br/favicon.ico" />
+        <img alt="" src="./assets/cart-icon.svg" alt="Carrinho de compras" />
       </button>
       <!-- /div> -->
     </header>
