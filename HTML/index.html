@@ -2,263 +2,109 @@
 <!DOCTYPE html>
 <!-- Conteúdo html do site -->
 <html lang="pt-BR">
-  <!-- Começo do Head -->
-  <head>
-    <title>Ituring E-Commerce</title>
-    <link rel="icon" href="https://ituring.com.br/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <script>
-    </script>
+<!-- Começo do Head -->
 
-    <!-- Começa a parte de CSS - Style -->
-    <style>
-      html, body, main{
-        height: 100%;
-      }
+<head>
+  <title>Ituring E-Commerce</title>
+  <link rel="icon" href="https://ituring.com.br/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<!-- Fim do Head -->
 
-      body{
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-      }
+<!-- Começo do body -->
 
-      /*header*/
-      .header {
-        background-color: #0f1726;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-top: 16px;
-        padding-bottom: 16px;
-        padding-right: 32px;
-        padding-left: 32px; 
-
-        /* padding: 16px 32px 16px 32px; */
-        /*padding: 16px 32px; */
-      }
-
-      .header_cart-button{
-        background-color: transparent;
-        border: none;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        padding-right: 0px;
-        padding-left: 0px;
-        /* padding: 0px; */
-      }
-
-      .header__text-input::placeholder {
-        color: #c7c7c7;
-      }
-
-      .header_text-input{
-        width: 500px;
-        border-radius: 4px;
-        padding-top: 8px;
-        padding-bottom: 8px;
-        padding-right: 8px;
-        padding-left: 8px;
-        /* padding: 8px; */
-      }
-
-     /* @media screen and {max-width: 900px;
-        .header_text-input{
-          display: none;
-        }
-      }*/
-
-      /*main-content*/
-      .main-content {
-        background-color: #ededed;
-        height: auto;
-      }
-
-      /*main-content - ordination-container*/
-      .ordination-container{
-        display: flex;
-        justify-content: flex-end;
-        padding: 32px;
-      }
-
-      .ordination-container__label, 
-      .ordination-container__select-input{
-        font-size: 14px;
-      }
-
-      .product-list{
-       width: 1280px;
-       max-width: 1280px;
-       margin: 0 auto;
-      }
-
-      .ordination-container__select-input {
-        background-color: transparent;
-        border: none;
-        font-weight: bold;
-      }
-
-      /*main-content - product-card*/
-      .product-list{
-        display: grid;
-        grid-template-columns: 320px 320px 320px 320px;
-        gap: 32px;
-        padding: 0 32px 32px 32px;
-      }
-
-      .product-card {
-        background-color: #fff;
-        /*height: 450px;*/
-        border-radius: 8px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0,2);
-        padding: 16px;
-        margin: 16px;
-       /*margin-bottom: 20px;*/
-      }
-
-      .product-card__product-image{
-        height: 220px;
-        width: 100%;
-        object-fit: contain;
-        
-      }
-
-      .product-list_image{
-        height: 220px;
-        width: 100%;
-        object-fit: contain;
-      }
-
-      .product-card__product-price{
-        font-size: 32px;
-        margin: 0;
-      }
-
-      .product-card__product-name{
-        font-size: 16px;
-        font-weight: normal;
-       
-      }
-
-      .product-card__description{
-        font-size: 14px;
-        color: #ababab;
-      }
-
-      /*footer*/
-      .footer {
-        background-color: #fff;
-        display: flex;
-        justify-content: center;
-        padding: 32px;
-      }
-    </style>
-    <!-- Final da parte de CSS - Style -->
-  </head>
-  <!-- Fim do Head -->
-  <!-- Começo do body -->
-  <body>
-    <!-- Cabeçalho_Header -->
-    <header class="header">
-      <img src="./assets/ituring-ecommerce-logo.svg" alt="Logo da aplicação de E-Commerce" />
-      <!-- Busca -->
-      <div>
-        <input
-          type="text"
-          title="Busca por Produtos"
-          value=""
-          placeholder="Buscar por produtos"
-          class="header_text-input"
-        />
-      </div>
-      <button class="header_cart">
-        <img alt="" src="./assets/cart-icon.svg" alt="Carrinho de compras" />
+<body>
+  <!-- Cabeçalho_Header -->
+  <header class="header">
+    <img src="./assets/ituring-ecommerce-logo.svg" alt="Logo da aplicação de E-Commerce" class="header__logo">
+    <!-- Busca -->
+    <button class="header_user_button">
+      <img alt="" src="./assets/cart-icon.svg">
+    </button>
+    <!-- /div> -->
+  </header>
+  <!-- Fim do Cabeçalho_Header -->
+  <!-- Começo do Main _Conteiner -->
+  <main class="main-content">
+    <section class="create-product">
+      <button class="btn" id="create-product">
+        Criar produto
       </button>
-      <!-- /div> -->
-    </header>
-    <!-- Fim do Cabeçalho_Header -->
-    <!-- Começo do Main _Conteiner -->
-    <main class="main-content">
-      <!-- Ordenar -->
-      <section class="ordination-container">
-        <span class="ordination-container__label">Ordenar por</span>
-        <select class="ordination-container_select-input">
-          <option value="price-desc">Menor Preço</option>
-          <option value="price-asc">Maior Preço</option>
-        </select>
-      </section>
-      <!-- Conteiner card -->
-      <section class="product-list">
-        <!-- Card -->
-        <article class="product-card">
-          <img src="./assets/produto-kit-ferramentas.jpg"
-            alt="Jogo de Ferramentas Kit 129 Peças C/ Maleta"
-            class="product-list_image"/>
-          <hr />
-          <h3 class="product-card__price">R$ 128,00</h3>
-          <h4 class="product-card__title">Jogo de Ferramentas Kit 129 Peças C/ Maleta + 40 Peças</h4>
-          <p class="product-card__description">Esse é um jogo de peças extremamente útil para diversas atividades, visto que o conjunto de peças é muito variado.</p>
-        </article>
-          <!-- Card -->
-          <article class="product-card">
-            <img src="./assets/produto-kit-ferramentas.jpg"
-              alt="Jogo de Ferramentas Kit 129 Peças C/ Maleta"
-              class="product-list_image"/>
-            <hr />
-            <h3 class="product-card__price">R$ 128,00</h3>
-            <h4 class="product-card__title">Jogo de Ferramentas Kit 129 Peças C/ Maleta + 40 Peças</h4>
-            <p class="product-card__description">Esse é um jogo de peças extremamente útil para diversas atividades, visto que o conjunto de peças é muito variado.</p>
-          </article>
-            <!-- Card -->
-        <article class="product-card">
-          <img src="./assets/produto-kit-ferramentas.jpg"
-            alt="Jogo de Ferramentas Kit 129 Peças C/ Maleta"
-            class="product-list_image"/>
-          <hr />
-          <h3 class="product-card__price">R$ 128,00</h3>
-          <h4 class="product-card__title">Jogo de Ferramentas Kit 129 Peças C/ Maleta + 40 Peças</h4>
-          <p class="product-card__description">Esse é um jogo de peças extremamente útil para diversas atividades, visto que o conjunto de peças é muito variado.</p>
-        </article>
-          <!-- Card -->
-          <article class="product-card">
-            <img src="./assets/produto-kit-ferramentas.jpg"
-              alt="Jogo de Ferramentas Kit 129 Peças C/ Maleta"
-              class="product-list_image"/>
-            <hr />
-            <h3 class="product-card__price">R$ 128,00</h3>
-            <h4 class="product-card__title">Jogo de Ferramentas Kit 129 Peças C/ Maleta + 40 Peças</h4>
-            <p class="product-card__description">Esse é um jogo de peças extremamente útil para diversas atividades, visto que o conjunto de peças é muito variado.</p>
-          </article>
-            <!-- Card -->
-        <article class="product-card">
-          <img src="./assets/produto-kit-ferramentas.jpg"
-            alt="Jogo de Ferramentas Kit 129 Peças C/ Maleta"
-            class="product-list_image"/>
-          <hr />
-          <h3 class="product-card__price">R$ 128,00</h3>
-          <h4 class="product-card__title">Jogo de Ferramentas Kit 129 Peças C/ Maleta + 40 Peças</h4>
-          <p class="product-card__description">Esse é um jogo de peças extremamente útil para diversas atividades, visto que o conjunto de peças é muito variado.</p>
-        </article>
-          <!-- Card -->
-          <article class="product-card">
-            <img src="./assets/produto-kit-ferramentas.jpg"
-              alt="Jogo de Ferramentas Kit 129 Peças C/ Maleta"
-              class="product-list_image"/>
-            <hr />
-            <h3 class="product-card__price">R$ 128,00</h3>
-            <h4 class="product-card__title">Jogo de Ferramentas Kit 129 Peças C/ Maleta + 40 Peças</h4>
-            <p class="product-card__description">Esse é um jogo de peças extremamente útil para diversas atividades, visto que o conjunto de peças é muito variado.</p>
-          </article>
-      </section>
-    </main>
-    <!-- Fim do main_Conteiner -->
-    <!-- Começo do Rodapé_Footer -->
-    <footer class="footer">
-      <span>
-        Copyright 2022 Ituring E-Commerce. Todos os direitos reservados.</span
-      >
-    </footer>
-    <!-- Final do Rodapé_Footer -->
-  </body>
+      <dialog class="create-product_dialog">
+        <form method="dialog" class="create-product_form">
+          <h2 class="create-product_title">Criar produto</h2>
+          <fieldset>
+            <label for="product-name">Nome</label>
+            <input type="text" name="product-name" placeholder="Jogo de ferramentas...">
+
+            <label for="product-description">Descrição do produto</label>
+            <textarea id="description" name="product-description" rows="4"
+              placeholder="Esse é um jogo de ferramentas variado"></textarea>
+
+            <label for="product-price">Preço</label>
+            <input type="text" id="price" name="product-price" placeholder="R$  128,00">
+
+            <label for="product-image">Link de Imagem</label>
+            <input type="text" id="image" name="product-image" placeholder="https://imagem.com/caixa-de-ferramentas...">
+            <label for="product-image-description">Descrição da Imagem</label>
+            <input type="text" id="image-description" name="product-image-description"
+              placeholder="Caixa de ferramenta contendo diversos itens...">
+          </fieldset>
+          <div>
+            <button class="btn" type="reset" id="cancel">Cancelar</button>
+            <button class="btn" type="submit">Criar</button>
+          </div>
+        </form>
+      </dialog>
+    </section>
+    <!-- Ordenar -->
+    <section class="product-card">
+      <article class="product-card">
+        <img alt="Jogo de Ferramentas Kit 129 Peças C/ Maleta" src="./assets/produto-kit-ferramentas.jpg"
+          class="product-list_image" />
+        <hr />
+        <h1 class="product-card__price">R$ 128,00</h1>
+        <h2 class="product-card__title">Jogo de Ferramentas Kit 129 Peças C/ Maleta + 40 Peças</h2>
+        <p class="product-card__description">Esse é um jogo de peças extremamente útil para diversas atividades, visto
+          que o conjunto de peças é muito variado.</p>
+      </article>
+    </section>
+  </main>
+  <!-- Fim do main_Conteiner -->
+  <!-- Começo do Rodapé_Footer -->
+  <footer class="footer">
+    <span>
+      Copyright 2022 Ituring E-Commerce. Todos os direitos reservados.</span>
+  </footer>
+  <!-- Final do Rodapé_Footer -->
+  <script>
+    const createProductButton = document.querySelector('#create-product')
+    const dialog = document.querySelector('.create-product_dialog')
+    const cancelDialogButton = document.querySelector('#cancel')
+
+    // dialog.open = true funciona
+    // dialog.open = false funciona
+
+    // dialog.setAttribute('open', true) funciona
+    // dialog.setAttribute('open', false) nao funciona
+    // dialog.removeAttribute('open') funciona
+
+    // dialog.showModal() // funciona;
+    // dialog.close() // funciona
+
+    createProductButton.addEventListener('click', openModal);
+
+    function openModal() {
+      dialog.showModal();
+    }
+
+    cancelDialogButton.addEventListener('click', () => {
+      dialog.close();
+    })
+  </script>
+</body>
+
 </html>
