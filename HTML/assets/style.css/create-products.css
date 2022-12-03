@@ -1,0 +1,78 @@
+.create-product{
+    margin: 24px 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 16px;
+}
+
+
+.create-product_dialog{
+    box-sizing: border-box;
+    width: 90%;
+    max-width: 700px;
+    border: none;
+    border-radius: 8px;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6)
+}
+
+.create-product_form{
+ background-color: var(--branco);
+ box-sizing: border-box;
+ padding: 16px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.create-product_form > fieldset{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.create-product_form input, .create-product_form textarea {
+    box-sizing: border-box;
+    display: block;
+    border: 1px solid;
+    border-color: var(--cinza-claro);
+    padding: 6px;
+    border-radius: 4px;
+    width: 100%;
+    height: auto;
+    outline: none;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.create-product_form textarea {
+    resize: none;
+  }
+
+.create-product_form input:focus,
+.create-product_form textarea:focus {
+  border-color: var(--verde);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--cinza-claro);
+}
+
+.create-product_menu {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 32px;
+}
+
+.create-product_menu > button:first-child {
+  margin-right: 16px;
+}
+
+dialog div {
+  padding-top: 2  0px;
+}
+
+  

@@ -1,0 +1,19 @@
+button {
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+    
+  .btn {
+    background-color: var(--verde);
+    color: var(--azul);
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 24px;
+    transition: 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: var(--verde-hover);
+  }
