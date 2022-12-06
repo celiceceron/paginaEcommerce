@@ -15,11 +15,11 @@ const cancelDialogButton = document.querySelector("#cancel");
 createProductButton.addEventListener("click", openModal);
 
 function openModal() {
-  dialog.showModal();
+    dialog.showModal();
 }
 
 cancelDialogButton.addEventListener("click", () => {
-  dialog.close();
+    dialog.close();
 });
 
 //// DICA: CRIAR NOVAS FUNCOES PARA RESPONSABILIDADES DIFERENTES.
@@ -29,23 +29,23 @@ const saveButton = document.querySelector('#save');
 saveButton.addEventListener('click', getInputValues);
 
 function getInputValues() {
-  const inputName = inputs[0].value;
-  const inputPrice = inputs[1].value;
-  const inputImage = inputs[2].value;
-  const inputImageDescription = inputs[3].value;
-  const productDescription = document.querySelector('#description').value;
-  //console.log(inputName, inputPrice, inputImage, inputImageDescription, productDescription);
+    const inputName = inputs[0].value;
+    const inputPrice = inputs[1].value;
+    const inputImage = inputs[2].value;
+    const inputImageDescription = inputs[3].value;
+    const productDescription = document.querySelector('#description').value;
+    //console.log(inputName, inputPrice, inputImage, inputImageDescription, productDescription);
 
-  ///CRIANDO UM OBJETO COM AS INFORMACOES:
+    ///CRIANDO UM OBJETO COM AS INFORMACOES:
 
-  console.log({
-    inputName,
-    inputPrice,
-    inputImage,
-    inputImageDescription,
-    productDescription,
-  });
-}
+    console.log({
+        inputName,
+        inputPrice,
+        inputImage,
+        inputImageDescription,
+        productDescription,
+    })
+};
 
 ///CRIANDO UM NOVO PRODUCT CARD:
 const productCard = document.createElement('article');
@@ -53,4 +53,8 @@ productCard.classList.add('product-card');
 const h2 = document.createElement('h2'); // CRIANDO UM ELEMENTO H2
 productCard.appendChild(h2); // COLOCANDO O H2 DENTRO DA ARVORE (DOM) DO PRODUCT CARD
 h2.textContent = 'Jogo de ferramentas kit 129 peças' //CRIANDO UM TEXTO PRO H2.
+
+//CRIANDO UM PAI PARA O PRODUCT LIST:
+const productList = document.querySelector('.product-list');
+productList.appendChild(productCard);
 console.log(productCard)
