@@ -20,4 +20,8 @@ function openModal() {
 
 cancelDialogButton.addEventListener('click', () => {
     dialog.close();
-})
+});
+
+const inputs = document.querySelectorAll('input');
+const saveButton = document.querySelector('#save');
+console.log('saveButton', saveButton);
