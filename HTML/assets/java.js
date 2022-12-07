@@ -57,9 +57,11 @@ function getInputValues(){
 //console.log(productList)
 
 //SEGUNDA E MELHOR MANEIRA DE CRIAR ELEMENTO.
+function createProductCard(){
 const productCard = document.createElement('article')
 productCard.classList.add('product-card')
 const productList = document.querySelector('.product-list')
+//INNERHTML SUBSCREVE TUDO, PARA CONCATENAR INFORMAÇŌES USAR .innerHTML +=
 productCard.innerHTML = 
 `<img alt="Um conjunto de martelo, alicate, trena e chaves dentro de uma caixa preta"
 src="./assets/produto-kit-ferramentas.jpg" class="product-card__product-image"></img>
@@ -69,4 +71,8 @@ src="./assets/produto-kit-ferramentas.jpg" class="product-card__product-image"><
 <h2 class="product-card__product-name">Jogo de Ferramentas Kit 129 Peças C/ Maleta + 40 Peças</h2>
 <p class="product-card__product-description">Esse é um jogo de peças extremamente útil para diversas
 atividades, visto que o conjunto de peças é muito variado.</p>`
+
+
 productList.appendChild(productCard)
+
+}
