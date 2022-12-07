@@ -93,3 +93,24 @@ function handleClickSave() {
 }
 
 saveButton.addEventListener('click', handleClickSave);
+
+//CONSUMINDO UM API FAKE.
+
+fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then(json => {
+        //const item = json[0]
+        //console.log(json)
+        json.forEach(item => {
+            createProductCard(
+                item.title,
+                item.description,
+                item.price,
+                item.image,
+                item.title,
+            )
+
+        });
+    })
+
+    .catch(error => console.log(error))
