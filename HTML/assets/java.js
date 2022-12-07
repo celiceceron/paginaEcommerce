@@ -1,6 +1,6 @@
 const createProductButton = document.querySelector('#create-product')
 const dialog = document.querySelector('.create-product_dialog')
-const cancelDialogButton =  document.querySelector('#cancel')
+const cancelDialogButton = document.querySelector('#cancel')
 
 // dialog.open = true funciona
 // dialog.open = false funciona
@@ -15,33 +15,34 @@ const cancelDialogButton =  document.querySelector('#cancel')
 createProductButton.addEventListener('click', openModal);
 
 function openModal() {
-  dialog.showModal();
+    dialog.showModal();
 }
 
 
 //DICA_PARA CADA FUNCIONALIDADE CRIAR UMA NOVA FUNÇÃO.
 cancelDialogButton.addEventListener('click', () => {
-  dialog.close();
+    dialog.close();
 })
 
 const inputs = document.querySelectorAll('input');
 const saveButton = document.querySelector('#save');
-saveButton.addEventListener('click', getInputValues);
+//saveButton.addEventListener('click', getInputValues);
 
 //FUNÇÃO QUE CAPTURA VALORES.
-function getInputValues(){
+function getInputValues() {
     const inputName = inputs[0].value;
     const inputPrice = inputs[1].value;
     const inputImage = inputs[2].value;
     const inputImageDescription = inputs[3].value;
     const productDescription = document.querySelector('#description').value;
-    console.log({
-        inputName, 
-        inputPrice, 
-        inputImage, 
-        inputImageDescription, 
+
+    return {
+        inputName,
+        inputImageDescription,
+        inputPrice,
+        inputImage,
         productDescription,
-    })
+    }
 }
 
 //FUNÇÃO PARA CRIAR ELEMENTOS.
@@ -57,22 +58,38 @@ function getInputValues(){
 //console.log(productList)
 
 //SEGUNDA E MELHOR MANEIRA DE CRIAR ELEMENTO.
-function createProductCard(){
-const productCard = document.createElement('article')
-productCard.classList.add('product-card')
-const productList = document.querySelector('.product-list')
-//INNERHTML SUBSCREVE TUDO, PARA CONCATENAR INFORMAÇŌES USAR .innerHTML +=
-productCard.innerHTML = 
-`<img alt="Um conjunto de martelo, alicate, trena e chaves dentro de uma caixa preta"
-src="./assets/produto-kit-ferramentas.jpg" class="product-card__product-image"></img>
+function createProductCard(nome, productDescription, price, imgSrc, imgDescription) {
+    const productCard = document.createElement('article');
+    productCard.classList.add('product-card')
+    const productList = document.querySelector('.product-list')
+    //INNERHTML SUBSCREVE TUDO, PARA CONCATENAR INFORMAÇŌES USAR .innerHTML +=
+    productCard.innerHTML =
+        `<img alt="${imgDescription}"
+src="${imgSrc}" class="product-card__product-image"></img>
 <hr>
 </hr>
-<h1 class="product-card__product-price">R$ 128,00</h1>
-<h2 class="product-card__product-name">Jogo de Ferramentas Kit 129 Peças C/ Maleta + 40 Peças</h2>
-<p class="product-card__product-description">Esse é um jogo de peças extremamente útil para diversas
-atividades, visto que o conjunto de peças é muito variado.</p>`
+<h1 class="product-card__product-price">${price}</h1>
+<h2 class="product-card__product-name">${nome}</h2>
+<p class="product-card__product-description">${productDescription}</p>`
 
-
-productList.appendChild(productCard)
+    productList.appendChild(productCard)
 
 }
+
+//FUNÇÃO DE CONTROLE, CRIA ELEMENTOS E CAPUTURA OS VALORES.
+//FUNÇÃO handle LIDA COM AS "COISAS"
+function handleClickSave() {
+    const productValues = getInputValues()
+    createProductCard(
+        productValues.inputName,
+        productValues.productDescription,
+        productValues.inputPrice,
+        productValues.inputImage,
+        productValues.inputImageDescription,
+    )
+
+    const form = document.querySelector('form');
+    form.reset();
+}
+
+saveButton.addEventListener('click', handleClickSave);
