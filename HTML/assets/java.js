@@ -47,4 +47,10 @@ function getInputValues(){
 //FUNÇÃO PARA CRIAR ELEMENTOS.
 const productCard = document.createElement('article')
 productCard.classList.add('product-card')
-console.log(productCard)
+const h2 = document.createElement('h2')
+productCard.appendChild(h2)
+h2.textContent = 'Jogo de Ferramentas'
+//PRODUCT LIST É O PAI
+const productList = document.querySelector('.product-list')
+productList.appendChild(productCard)
+console.log(productList)
