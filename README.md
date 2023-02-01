@@ -10,6 +10,8 @@ This is the repository of the Front-End course at the Ituring Institute of Techn
 
 Throughout the course, we develop an E-commerce page.
 
+## Gif Demonstration
+![Web 1]()
 
 
 # Technologies and tools I use
