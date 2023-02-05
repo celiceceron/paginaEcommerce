@@ -2,7 +2,7 @@
 
 # About 
 This is the repository of the Front-End course at the Ituring Institute of Technology:
-- HTML;
+- HTML5;
 - Interface construction with CSS;
 - Semantic HTML;
 - Responsive;
@@ -15,7 +15,7 @@ Throughout the course, we develop an E-commerce page.
 
 
 # Technologies and tools I use
-- HTML
+- HTML5
 - CSS
 - JavaScript
 - Responsive Web Design
